@@ -1,14 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class Pipes : MonoBehaviour
 {
     [SerializeField]
     private Control control;
+    
     // Start is called before the first frame update
     void Start()
     {
+        float yPosition = Random.Range(3f, 6f);
+        transform.position = new Vector3 (0, yPosition, 0);
+
         control = GameObject.Find("Control").GetComponent<Control>();
     }
 

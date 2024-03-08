@@ -2,14 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Control : MonoBehaviour
 {
     private GameObject background;
+    public float velocity;
 
     [SerializeField]
     private GameObject pipes;
-    public float velocity;
+    public GameObject gameOver;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +33,21 @@ public class Control : MonoBehaviour
 
     }
 
+    // Spawn new pipes
     void Spawn()
     {
         Instantiate(pipes, pipes.transform.position, Quaternion.identity);
+    }
+    
+    // If player lose then...
+    void GameOver()
+    {
+        gameOver.SetActive(true);
+    }
+
+    // Reload Scene
+    public void Reload()
+    {
+        SceneManager.LoadScene("SampleScene");
     }
 }

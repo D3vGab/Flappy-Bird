@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
+  - Pipe
   layers:
   - Default
   - TransparentFX
